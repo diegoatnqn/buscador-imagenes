@@ -2,6 +2,14 @@
 <!-- * * * * * * * * * * * Diego Fuentes. * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<p>
+  <mat-toolbar color="primary">
+    <span>Buscador de imagenes</span>
+    <span class="example-spacer"></span>
+    <a class="link-toolbar" href="https://github.com/diegoatnqn/buscador-imagenes" target="_blank"><mat-icon>grade</mat-icon></a>
+    
+  </mat-toolbar>
+</p>
 <div class="container">
   <section id="barra-de-busqueda">
     <form class="example-form">
@@ -15,7 +23,7 @@
 
   </section>
   <section id="visualizar">
-    <div *ngFor="let img of misImagenes;let i=index" class="divs" style="display:inline-block">
+    <div *ngFor="let img of misImagenes;let i=index" class="divs" >
       
       <img class="imagen" [src]="img.urls.regular" (click)="open(i)"/>
     </div>

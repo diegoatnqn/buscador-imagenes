@@ -1,3 +1,17 @@
+p {
+margin:0;
+}
+.container{
+    margin:1rem;
+}
+.example-spacer{
+    width:65%
+}
+.link-toolbar{
+    display:flex;
+    text-decoration:none;
+    color:inherit;
+}
 .example-form {
   min-width: 150px;
   max-width: 500px;
@@ -14,12 +28,14 @@
   max-width: 410px;
   height: 300px;
 }
-.divs{
-    margin:1rem;
+.divs {
+  margin: 1rem;
+  display:inline-block
 }
 .imagen:hover {
   transform: scale(1.05);
   transition-duration: .3s;
+  cursor:pointer;
 }
 #visualizar{
     text-align:center;

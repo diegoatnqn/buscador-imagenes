@@ -19,33 +19,32 @@ export class AppComponent {
   constructor(public img: BuscarService, private _lightbox: Lightbox) {
   }
   buscar() {
-    this.misImagenes = [];
+    this.misImagenes = []; //reset de variables
+    this._albums = [];
     console.log("Usted buscó :" + this.aBuscar.value);
     this.img.buscar(this.aBuscar.value).subscribe((data) => {
       this.miResultado = data;
-      this.cargar();
-      this.cargarAlbum();
+      this.cargar();  //Cargo fotos que recibo en misImagenes
+      this.cargarAlbum(); //Cargo cada foto en album para lightbox (visualizador)
     });
   }
-    cargarAlbum() {
-      for (let i = 0; i < 10; i++) {
-        const src = this.misImagenes[i]["urls"].full;
-        const caption = 'Image ' + i + ' caption here';
-        const thumb = 'demo/img/image' + i + '-thumb.jpg';
+  cargarAlbum() { 
+    for (let i = 0; i < this.misImagenes.length; i++) {
+        const src = this.misImagenes[i]["urls"].regular;
+      const caption = this.misImagenes[i].description;
         const album = {
           src: src,
           caption: caption,
-          thumb: thumb
+          
         };
 
-        this._albums.push(album);
+        this._albums.push(album);   //push a album cada objeto src:foto,caption descripcion
       }
     }
     cargar() {
       let i = 0;
       for (i; i < this.miResultado["results"].length; i++) {
-        this.misImagenes.push(this.miResultado["results"][i]);
-        console.log(this.miResultado["results"][i]);
+        this.misImagenes.push(this.miResultado["results"][i]); //push a cada imagen
       };
       
   }
