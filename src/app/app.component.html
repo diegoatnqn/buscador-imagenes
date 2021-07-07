@@ -8,16 +8,16 @@
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Buscar:</mat-label>
         <input matInput #message maxlength="256" placeholder="Ej: Gatitos" [formControl]="aBuscar">
-        <mat-hint align="start"><strong>Ojardo</strong> </mat-hint>
         <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
-        <button (click)="buscar()"> Buscar!</button>
+        <button mat-raised-button color="primary" (click)="buscar()"> Buscar!</button>
       </mat-form-field>
     </form>
 
   </section>
   <section id="visualizar">
-    <div *ngFor="let img of misImagenes" class="divs" style="display:inline-block">
-      <img class="imagen" [src]="img.urls.regular" />
+    <div *ngFor="let img of misImagenes;let i=index" class="divs" style="display:inline-block">
+      
+      <img class="imagen" [src]="img.urls.regular" (click)="open(i)"/>
     </div>
   </section>
 </div>

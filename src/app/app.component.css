@@ -1,19 +1,37 @@
 .example-form {
   min-width: 150px;
   max-width: 500px;
-  width: 100%;
+  margin: 0 auto;
 }
 
 .example-full-width {
   width: 100%;
 }
 #barra-de-busqueda{
-    margin:0 25%;
+    width:100%;
 }
-.imagen{
-    max-width:400px;
-    max-height:375px;
+.imagen {
+  max-width: 410px;
+  height: 300px;
 }
 .divs{
     margin:1rem;
+}
+.imagen:hover {
+  transform: scale(1.05);
+  transition-duration: .3s;
+}
+#visualizar{
+    text-align:center;
+}
+.mat-form-field-infix{
+    padding:0;
+}
+button{
+    float:right;
+}
+input{
+    font-size:x-large;
+    margin-top:.2em;
+    width:70%
 }
